@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "node setup.js && npm run start",
-    "start": "concurrently -c green,yellow -t \"HH:mm:ss\" -p \"{name} {time}\" \"npm run dev:client\" \"npm run dev:server\"",
+    "start": "npm run preview --prefix client -- --port $PORT --host",
+    "build": "npm run build --prefix client",
     "dev:client": "npm run dev --prefix client -- --host",
     "dev:server": "npm run dev --prefix server"
   },
